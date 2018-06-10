@@ -176,5 +176,5 @@ class GdReflectionLib
     }
 }
 
-$pt = PhpThumb::getInstance();
+$pt = maxcom\phpthumb\PhpThumb::getInstance();
 $pt->registerPlugin('GdReflectionLib', 'gd');

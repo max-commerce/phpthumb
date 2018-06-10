@@ -1,4 +1,7 @@
 <?php
+
+namespace maxcom\phpthumb;
+
 /**
  * PhpThumb Base Class Definition File
  * 

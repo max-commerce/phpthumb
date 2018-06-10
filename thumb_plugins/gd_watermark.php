@@ -96,5 +96,5 @@ class GdWatermark
 	}
 }
 
-$pt = PhpThumb::getInstance();
+$pt = maxcom\phpthumb\PhpThumb::getInstance();
 $pt->registerPlugin('GdWatermark', 'gd');

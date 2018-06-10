@@ -1,4 +1,7 @@
 <?php
+
+namespace maxcom\phpthumb;
+
 /**
  * PhpThumb Library Definition File
  * 
@@ -28,22 +31,22 @@
  */
 
 // define some useful constants
-define('THUMBLIB_BASE_PATH', dirname(__FILE__));
-define('THUMBLIB_PLUGIN_PATH', THUMBLIB_BASE_PATH . '/thumb_plugins/');
-define('DEFAULT_THUMBLIB_IMPLEMENTATION', 'gd');
+if (!defined('THUMBLIB_BASE_PATH')) define('THUMBLIB_BASE_PATH', dirname(__FILE__));
+if (!defined('THUMBLIB_PLUGIN_PATH')) define('THUMBLIB_PLUGIN_PATH', THUMBLIB_BASE_PATH . '/thumb_plugins/');
+if (!defined('DEFAULT_THUMBLIB_IMPLEMENTATION')) define('DEFAULT_THUMBLIB_IMPLEMENTATION', 'gd');
 
-/**
- * Include the PhpThumb Class
- */
-require_once THUMBLIB_BASE_PATH . '/PhpThumb.inc.php';
-/**
- * Include the ThumbBase Class
- */
-require_once THUMBLIB_BASE_PATH . '/ThumbBase.inc.php';
-/**
- * Include the GdThumb Class
- */
-require_once THUMBLIB_BASE_PATH . '/GdThumb.inc.php';
+// /**
+//  * Include the PhpThumb Class
+//  */
+// require_once THUMBLIB_BASE_PATH . '/PhpThumb.php';
+// /**
+//  * Include the ThumbBase Class
+//  */
+// require_once THUMBLIB_BASE_PATH . '/ThumbBase.php';
+// /**
+//  * Include the GdThumb Class
+//  */
+// require_once THUMBLIB_BASE_PATH . '/GdThumb.php';
 
 /**
  * PhpThumbFactory Object
@@ -109,7 +112,7 @@ class PhpThumbFactory
 		$implementationMap = array
 		(
 			'imagick'	=> 'ImagickThumb',
-			'gd' 		=> 'GdThumb'
+			'gd' 		=> 'maxcom\phpthumb\GdThumb'
 		);
 		
 		// grab an instance of PhpThumb

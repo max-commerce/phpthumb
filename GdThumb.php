@@ -1,4 +1,7 @@
 <?php
+
+namespace maxcom\phpthumb;
+
 /**
  * PhpThumb GD Thumb Class Definition File
  * 
@@ -825,7 +828,7 @@ class GdThumb extends ThumbBase
 		
 		if (!function_exists('imagerotate'))
 		{
-			throw new RuntimeException('Your version of GD does not support image rotation.');
+			throw new \Exception('Your version of GD does not support image rotation.');
 		}
 		
 		$this->workingImage = imagerotate($this->oldImage, $degrees, 0);
@@ -853,7 +856,7 @@ class GdThumb extends ThumbBase
 	{
 		if (headers_sent())
 		{
-			throw new RuntimeException('Cannot show image, headers have already been sent');
+			throw new \Exception('Cannot show image, headers have already been sent');
 		}
 		
 		switch ($this->format) 
@@ -911,7 +914,7 @@ class GdThumb extends ThumbBase
 	 * 
 	 * If the target directory is not writeable, the function will try to correct the permissions (if allowed, this
 	 * is set as an option ($this->options['correctPermissions']).  If the target cannot be made writeable, then a
-	 * RuntimeException is thrown.
+	 * \Exception is thrown.
 	 * 
 	 * TODO: Create additional paramter for color matte when saving images with alpha to non-alpha formats (i.e. PNG => JPG)
 	 * 
@@ -940,13 +943,13 @@ class GdThumb extends ThumbBase
 				// throw an exception if not writeable
 				if (!is_writeable(dirname($fileName)))
 				{
-					throw new RuntimeException ('File is not writeable, and could not correct permissions: ' . $fileName);
+					throw new \Exception ('File is not writeable, and could not correct permissions: ' . $fileName);
 				}
 			}
 			// throw an exception if not writeable
 			else
 			{
-				throw new RuntimeException ('File not writeable: ' . $fileName);
+				throw new \Exception ('File not writeable: ' . $fileName);
 			}
 		}
 		
