@@ -1,0 +1,12 @@
+{
+    "name": "max-commerce/phpthumb",
+    "description": "phpthumb extension for maxcommerce v.1",
+    "homepage": "http://maxcommerce.ru/",
+    "type": "project",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "maxcom\\phpthumb\\": ""
+        }
+    }
+}
