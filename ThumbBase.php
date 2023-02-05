@@ -193,7 +193,7 @@ abstract class ThumbBase
 		$this->hasError 	= true;
 		$this->errorMessage	= $errorMessage;
 		
-		throw new Exception ($errorMessage);
+		throw new \Exception ($errorMessage);
 	}
 	
 	/**
